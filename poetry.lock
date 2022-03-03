@@ -249,24 +249,6 @@ optional = false
 python-versions = "*"
 
 [[package]]
-name = "metakernel"
-version = "0.28.2"
-description = ""
-category = "main"
-optional = false
-python-versions = ">=3.6"
-
-[package.dependencies]
-ipykernel = "*"
-jupyter-core = "*"
-pexpect = ">=4.2"
-
-[package.extras]
-activity = ["portalocker"]
-parallel = ["ipyparallel"]
-test = ["pytest", "pytest-cov", "requests", "jupyter-kernel-test"]
-
-[[package]]
 name = "mypy-extensions"
 version = "0.4.3"
 description = "Experimental type system extensions for programs checked with the mypy typechecker."
@@ -504,7 +486,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "79788f71fa56c8699eaba6f2045899a4d2fe39a62463f4d524fdfeed8dd7e96c"
+content-hash = "be493b200c1b7adcba578208306970c8d4b35a41664a6a94fe3237d9201c9548"
 
 [metadata.files]
 appnope = [
@@ -670,10 +652,6 @@ matplotlib-inline = [
 mccabe = [
     {file = "mccabe-0.6.1-py2.py3-none-any.whl", hash = "sha256:ab8a6258860da4b6677da4bd2fe5dc2c659cff31b3ee4f7f5d64e79735b80d42"},
     {file = "mccabe-0.6.1.tar.gz", hash = "sha256:dd8d182285a0fe56bace7f45b5e7d1a6ebcbf524e8f3bd87eb0f125271b8831f"},
-]
-metakernel = [
-    {file = "metakernel-0.28.2-py2.py3-none-any.whl", hash = "sha256:f83b2d30044692ff70296a9a6e5c1239a12e0bdeddd50bc7ac1424fbe904bb84"},
-    {file = "metakernel-0.28.2.tar.gz", hash = "sha256:8811a4497444495639ef000902f4c6e8a7e2c57da1d47a8a24bcc9083548b389"},
 ]
 mypy-extensions = [
     {file = "mypy_extensions-0.4.3-py2.py3-none-any.whl", hash = "sha256:090fedd75945a69ae91ce1303b5824f428daf5a028d2f6ab8a299250a846f15d"},
