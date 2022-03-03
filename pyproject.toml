@@ -8,6 +8,7 @@ license = "GPL-3.0-only"
 [tool.poetry.dependencies]
 python = "^3.8"
 ipykernel = "^6.9.1"
+clingo = "^5.5.1"
 
 [tool.poetry.dev-dependencies]
 black = "^22.1.0"
