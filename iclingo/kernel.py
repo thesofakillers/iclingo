@@ -10,7 +10,6 @@ class ClingoKernel(Kernel):
         "name": "clingo",
         "mimetype": "text/x-clingo",
         "file_extension": ".lp",
-        "pygments_lexer": "prolog",
         "version": "0.1",
     }
     banner = "iclingo - for ASP in Jupyter"
@@ -27,13 +26,10 @@ class ClingoKernel(Kernel):
         # execute code
         clingo = ClingoInterface()
         std_out = clingo.generate_output(code)
-        # TODO
         if not silent:
             # show output by sending a message to the frontend
             stream_content = {"name": "stdout", "text": std_out}
             self.send_response(self.iopub_socket, "stream", stream_content)
-            # TODO
-            pass
         # return a dict with the execution results
         return {
             "status": "ok",
