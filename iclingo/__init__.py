@@ -1,6 +1,6 @@
 """clingo kernel for Jupyter"""
 from ipykernel.kernelbase import Kernel
-import clingo
+from interface import ClingoInterface
 
 
 class ClingoKernel(Kernel):
@@ -25,10 +25,12 @@ class ClingoKernel(Kernel):
         To display output, can send messages using send_response().
         """
         # execute code
+        clingo = ClingoInterface()
+        std_out = clingo.generate_output(code)
         # TODO
         if not silent:
             # show output by sending a message to the frontend
-            stream_content = {"TODO": "TODO"}
+            stream_content = {"name": "stdout", "text": std_out}
             self.send_response(self.iopub_socket, "stream", stream_content)
             # TODO
             pass
