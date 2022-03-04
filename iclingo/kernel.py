@@ -1,6 +1,6 @@
 """clingo kernel for Jupyter"""
 from ipykernel.kernelbase import Kernel
-from interface import ClingoInterface
+from .interface import ClingoInterface
 
 
 class ClingoKernel(Kernel):
@@ -39,9 +39,3 @@ class ClingoKernel(Kernel):
             "status": "ok",
             "execution_count": self.execution_count,
         }
-
-
-if __name__ == "__main__":
-    from ipykernel.kernelapp import IPKernelApp
-
-    IPKernelApp.launch_instance(kernel_class=ClingoKernel)
