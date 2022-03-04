@@ -25,13 +25,31 @@ class ClingoKernel(Kernel):
         """
         # execute code
         clingo = ClingoInterface()
-        std_out = clingo.generate_output(code)
-        if not silent:
-            # show output by sending a message to the frontend
-            stream_content = {"name": "stdout", "text": std_out}
-            self.send_response(self.iopub_socket, "stream", stream_content)
-        # return a dict with the execution results
-        return {
-            "status": "ok",
-            "execution_count": self.execution_count,
-        }
+        error = None
+        ok = True
+        try:
+            std_out = clingo.generate_output(code)
+        except Exception as e:
+            error = e
+            ok = False
+        # handle errors
+        if not ok:
+            if not silent:
+                error_content = {"ename": "", "evalue": str(error), "traceback": []}
+                self.send_response(self.iopub_socket, "error", error_content)
+            # return a dict with the execution results
+            return {
+                "status": "error",
+                "execution_count": self.execution_count,
+            }
+        # in case things worked fine
+        elif ok:
+            if not silent:
+                # show output by sending a message to the frontend
+                stream_content = {"name": "stdout", "text": std_out}
+                self.send_response(self.iopub_socket, "stream", stream_content)
+            # return a dict with the execution results
+            return {
+                "status": "ok",
+                "execution_count": self.execution_count,
+            }
