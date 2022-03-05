@@ -28,7 +28,7 @@ class ClingoKernel(Kernel):
         error = None
         ok = True
         try:
-            std_out = clingo.generate_output(code)
+            std_out = clingo.run_program(code)
         except Exception as e:
             error = e
             ok = False

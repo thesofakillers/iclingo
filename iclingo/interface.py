@@ -2,15 +2,25 @@ import clingo
 
 
 class ClingoInterface:
+    """
+    Wrapper class for executing a program
+    via clingo.Control
+
+    Class necessary to keep track of state
+    for some print statements
+    """
+
     def __init__(self):
+        """these need to be kept track of in state"""
         self.optimum_found = False
         self.exhausted = False
         self.sat = False
 
-    def generate_output(self, program, clear_globals=True):
+    def run_program(self, program, clear_state=True):
+        """runs ASP program, returning output as a string"""
         output = ""
-        if clear_globals:
-            self._clear_globals()
+        if clear_state:
+            self._clear_state()
         control = clingo.Control()
         control.add("base", [], program)
         control.ground([("base", [])])
@@ -47,13 +57,15 @@ class ClingoInterface:
         return output
 
     def print_answer_sets(self, program, clear_globals=True):
-        print(self.generate_output(program, clear_globals))
+        print(self.run_program(program, clear_globals))
 
     def _on_finish(self, res):
+        """update state on finish"""
         self.sat = res.satisfiable
         self.exhausted = res.exhausted
 
-    def _clear_globals(self):
+    def _clear_state(self):
+        """reset our state"""
         self.optimum_found = False
         self.exhausted = False
         self.sat = False
