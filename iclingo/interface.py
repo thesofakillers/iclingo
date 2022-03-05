@@ -20,23 +20,21 @@ class ClingoInterface:
             model_count += 1
             output += f"\nAnswer {model_count}"
             output += "\n" + str(model)
-
+        # generic statements
         if self.sat:
             output += "\nSATISFIABLE"
         else:
             output += "\nUNSATISFIABLE"
-
         stats = control.statistics["summary"]
         if stats["models"]["optimal"] > 0:
             self.optimum_found = True
             output += "\nOPTIMUM FOUND"
             output += f"\nOptimization: {stats['lower'][0]:n}"
-
+        # additional statements
         output += (
-            f"\nModels\t\t: {stats['models']['enumerated']:n}"
+            f"\n\nModels\t\t: {stats['models']['enumerated']:n}"
             + f"{'+' if not self.exhausted else ''}"
         )
-
         if self.optimum_found:
             output += "\n\tOptimum\t: yes"
             output += f"\nOptimization\t: {stats['lower'][0]:n}"
