@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "iclingo"
-version = "0.1.2"
+version = "0.1.3"
 description = "🔴🟢🔵 clingo kernel for Jupyter"
 authors = ["Giulio Starace <giulio.starace@gmail.com>"]
 license = "GPL-3.0-only"
