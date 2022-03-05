@@ -23,6 +23,8 @@ black = "^22.1.0"
 flake8 = "^4.0.1"
 jupyterlab = "^3.3.0"
 jupyter-console = "^6.4.0"
+jupyter-contrib-nbextensions = "^0.5.1"
+nbconvert = "^6.4.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
