@@ -2,6 +2,7 @@ import json
 import os
 import sys
 import argparse
+import shutil
 
 from jupyter_client.kernelspec import KernelSpecManager
 from IPython.utils.tempdir import TemporaryDirectory
@@ -21,8 +22,11 @@ def install_my_kernel_spec(user=True, prefix=None):
             json.dump(kernel_json, f, sort_keys=True)
         # TODO: Copy resources once they're specified
 
-        print("Installing IPython kernel spec")
-        KernelSpecManager().install_kernel_spec(td, "bash", user=user, prefix=prefix)
+        print("Installing Jupyter kernel spec")
+        KS = KernelSpecManager()
+        KS.install_kernel_spec(td, "iclingo", user=user, prefix=prefix)
+        destination = KS._get_destination_dir("iclingo", user=user, prefix=prefix)
+        print(f"iclingo is installed to {destination}")
 
 
 def _is_root():
