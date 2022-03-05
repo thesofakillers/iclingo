@@ -4,6 +4,13 @@ version = "0.1.0"
 description = "🔴🟢🔵 clingo kernel for Jupyter"
 authors = ["Giulio Starace <giulio.starace@gmail.com>"]
 license = "GPL-3.0-only"
+readme = "README.md"
+repository = "https://github.com/thesofakillers/iclingo"
+keywords = [
+  "kernel", "jupyter", "logic-programming" ,"clingo",
+  "answer-set-programming" ,"ipykernel"
+]
+include = ["LICENSE"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
