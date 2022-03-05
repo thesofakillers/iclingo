@@ -10,8 +10,6 @@ from IPython.utils.tempdir import TemporaryDirectory
 kernel_json = {
     "argv": [sys.executable, "-m", "iclingo", "-f", "{connection_file}"],
     "display_name": "iclingo",
-    "language": "clingo",
-    "codemirror_mode": "clingo",
 }
 
 
@@ -21,6 +19,10 @@ def install_my_kernel_spec(user=True, prefix=None):
         with open(os.path.join(td, "kernel.json"), "w") as f:
             json.dump(kernel_json, f, sort_keys=True)
         # TODO: Copy resources once they're specified
+        shutil.copy(
+            os.path.join(os.path.split(__file__)[0], "kernel.js"),
+            os.path.join(td, "kernel.js"),
+        )
 
         print("Installing Jupyter kernel spec")
         KS = KernelSpecManager()
