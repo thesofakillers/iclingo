@@ -26,10 +26,10 @@ jupyter functionality such as markdown cells. An example of this is available in
 ### Limitations
 
 - No syntax highlighting is available
-- Currently, no configuration options cannot be passed to a given cell. This
-  means that the default clingo options are used, such that for a problem with
+- Currently, no configuration options can be passed to a given cell. This means
+  that the default clingo options are used, such that for a problem with
   multiple answers, only the first answer is shown.
-- Multi-short solving is not supported
+- Multi-shot solving is not supported
 
 ## Development
 
