@@ -1,5 +1,10 @@
 # iclingo
 
+![Compatible python versions](https://img.shields.io/pypi/pyversions/iclingo)
+![build workflow
+badge](https://img.shields.io/github/workflow/status/thesofakillers/iclingo/build)
+![PyPI version](https://badge.fury.io/py/iclingo.svg)
+
 🔴🟢🔵 [clingo](https://potassco.org/clingo/) kernel for
 [Jupyter](https://jupyter.org/).
 
