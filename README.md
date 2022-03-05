@@ -1,5 +1,8 @@
 # iclingo
 
+![build workflow
+badge](https://github.com/thesofakillers/iclingo/actions/workflows/build.yml/badge.svg)
+
 🔴🟢🔵 [clingo](https://potassco.org/clingo/) kernel for
 [Jupyter](https://jupyter.org/).
 
