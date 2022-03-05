@@ -11,6 +11,8 @@ class ClingoKernel(Kernel):
         "mimetype": "text/x-clingo",
         "file_extension": ".lp",
         "version": "0.1",
+        "codemirror_mode": {"name": "prolog"},
+        "pygments_lexer": "prolog",
     }
     banner = "iclingo - for ASP in Jupyter"
 
