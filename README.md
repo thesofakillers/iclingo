@@ -7,7 +7,10 @@
 
 To install, simply run
 
-`pip install iclingo`
+```console
+pip install iclingo
+python -m iclingo.install
+```
 
 ## Usage
 
@@ -37,7 +40,7 @@ automatic publishing to [PyPi](https://pypi.org/) upon pushes of
 
 When ready to publish the latest commit, simply run the following:
 
-```
+```console
 git tag $(poetry version --short)
 git push --tags
 ```
