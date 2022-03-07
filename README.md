@@ -1,9 +1,9 @@
 # iclingo
 
-![Compatible python versions](https://img.shields.io/pypi/pyversions/iclingo)
-![build workflow
-badge](https://img.shields.io/github/workflow/status/thesofakillers/iclingo/build)
-![PyPI version](https://badge.fury.io/py/iclingo.svg)
+[![Compatible python versions](https://img.shields.io/pypi/pyversions/iclingo)](https://badge.fury.io/py/iclingo)
+[![build workflow
+badge](https://img.shields.io/github/workflow/status/thesofakillers/iclingo/build)](https://github.com/thesofakillers/iclingo/actions/workflows/build.yml)
+[![PyPI version](https://badge.fury.io/py/iclingo.svg)](https://badge.fury.io/py/iclingo)
 
 🔴🟢🔵 [clingo](https://potassco.org/clingo/) kernel for
 [Jupyter](https://jupyter.org/).
