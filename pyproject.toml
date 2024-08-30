@@ -21,7 +21,7 @@ single-source = "^0.2.0"
 [tool.poetry.dev-dependencies]
 black = "^22.1.0"
 flake8 = "^4.0.1"
-jupyterlab = "^3.3.0"
+jupyterlab = "^3.6.8"
 notebook = "^6.4.10"
 
 [build-system]
